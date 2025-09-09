@@ -1,7 +1,7 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { ChefHat, Clock, MapPin, MessageCircle, Star } from "lucide-react"
+import { ChefHat, Clock, MapPin, MessageCircle, Star, Wallet, Percent, Tag } from "lucide-react"
 import Image from "next/image"
 
 export function Hero() {
@@ -30,17 +30,16 @@ export function Hero() {
           {/* Text Content */}
           <div className="text-center lg:text-left space-y-6 animate-fade-in">
             <div className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-4 py-2 rounded-full text-sm font-medium animate-bounce-in">
-              <Star className="h-4 w-4 fill-current" aria-hidden="true" />
-              <span>5/5 Rating Pelanggan</span>
+              <Tag className="h-4 w-4 fill-current" aria-hidden="true" />
+              <span>Harga Terjangkau untuk Semua</span>
             </div>
 
             <div className="space-y-4">
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground text-balance leading-tight">
-                Cita Rasa <span className="text-primary font-extrabold">Nusantara</span> di Kantin Mini
+                Cita Rasa <span className="text-primary font-extrabold">Terbaik</span> di Kantin Mini
               </h1>
               <p className="text-base sm:text-lg md:text-xl text-muted-foreground text-pretty max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-                Nikmati kelezatan masakan Indonesia dengan bahan segar, harga terjangkau, dan pelayanan cepat di
-                lingkungan yang nyaman dan ramah.
+                Nikmati beragam pilihan menu lezat, mulai dari masakan Nusantara, Asia, hingga hidangan modern. Harga terjangkau, rasa istimewa, dan pelayanan ramah untuk semua pelanggan.
               </p>
             </div>
 
@@ -97,7 +96,7 @@ export function Hero() {
           <div className="relative animate-fade-in animate-delay-100">
             <div className="relative aspect-square sm:aspect-[4/3] rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl mobile-enhanced-shadow">
               <Image
-                src="/indonesian-nasi-paket-with-fried-chicken--sambal--.jpg"
+                src="/images/menu/chicken-katsu.png"
                 alt="Paket Nasi Kantin Mini dengan nasi putih, ayam goreng krispi, sambal matah segar, dan sayuran pendamping yang disajikan di piring putih"
                 fill
                 className="object-cover transition-transform duration-700 hover:scale-105"
@@ -119,9 +118,9 @@ export function Hero() {
                     <div className="text-right">
                       <span
                         className="text-lg sm:text-2xl font-bold text-primary block"
-                        aria-label="Harga dua puluh dua ribu rupiah"
+                        aria-label="Harga lima belas ribu rupiah"
                       >
-                        {new Intl.NumberFormat("id-ID", { style: "currency", currency: "IDR" }).format(22000)}
+                        {new Intl.NumberFormat("id-ID", { style: "currency", currency: "IDR" }).format(15000)}
                       </span>
                       <span className="text-xs text-accent font-medium">Hemat 15%</span>
                     </div>

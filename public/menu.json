@@ -7,7 +7,8 @@
       "category": "Paket Nasi",
       "price": 15000,
       "description": "Nasi putih dengan chicken katsu crispy dan saus khas Jepang",
-      "image": "/placeholder.svg?height=300&width=400"
+      "image": "/images/menu/chicken-katsu.png",
+      "recommended": true
     },
     {
       "id": 2,

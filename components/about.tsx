@@ -7,8 +7,8 @@ export function About() {
   const features = [
     {
       icon: Heart,
-      title: "Bahan Segar",
-      description: "Menggunakan bahan-bahan segar pilihan setiap hari untuk cita rasa terbaik",
+      title: "Menu Variatif",
+      description: "Tersedia beragam pilihan menu, dari tradisional hingga modern, sesuai selera Anda",
     },
     {
       icon: DollarSign,
@@ -22,8 +22,8 @@ export function About() {
     },
     {
       icon: Clock,
-      title: "Buka Setiap Hari",
-      description: "Siap melayani Anda dari pagi hingga malam, 7 hari dalam seminggu",
+      title: "Buka Senin-Jumat",
+      description: "Siap melayani Anda dari pagi hingga malam, setiap hari kerja",
     },
   ]
 

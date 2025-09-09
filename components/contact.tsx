@@ -6,7 +6,7 @@ import { MessageCircle, MapPin, Clock, Navigation } from "lucide-react"
 // === Data Kontak ===
 const PHONE_E164 = "6285174241304" // nomor WA, tanpa tanda + atau spasi
 const DISPLAY_PHONE = "+62 851-7424-1304" // nomor yang ditampilkan
-const ADDRESS = "3JC7+88G, Cikawao, Kec. Lengkong, Kota Bandung, Jawa Barat 40261"
+const ADDRESS = "Kantin Mini, Cikawao, Kec. Lengkong, Kota Bandung, Jawa Barat 40261"
 const DEFAULT_MESSAGE = "Halo Kantin Mini, saya ingin bertanya tentang menu dan layanan Anda."
 
 // === URL Builder ===
