@@ -43,38 +43,39 @@ export function MenuFilters({ categories, activeCategory, onCategoryChange }: Me
   return (
     <div className="w-full" role="group" aria-label="Filter kategori menu">
       <div className="relative">
-        {/* gradient kiri/kanan */}
-        <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-10 bg-gradient-to-r from-background to-transparent z-10 md:hidden" />
-        <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-10 bg-gradient-to-l from-background to-transparent z-10 md:hidden" />
+        {/* Fade kiri/kanan agar transisi halus */}
+        <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-12 bg-gradient-to-r from-background to-transparent z-10 md:hidden" />
+        <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-12 bg-gradient-to-l from-background to-transparent z-10 md:hidden" />
 
-        {/* tombol panah */}
+        {/* Panah */}
         <Button
           variant="ghost"
           size="sm"
           onClick={scrollLeftFn}
           disabled={!canLeft}
-          className="absolute left-0 top-1/2 -translate-y-1/2 z-20 bg-background/80 backdrop-blur-sm shadow-sm md:hidden"
+          className="absolute left-1 top-1/2 -translate-y-1/2 z-20 bg-background/80 backdrop-blur-sm shadow-sm md:hidden"
           aria-label="Scroll kategori ke kiri"
         >
           <ChevronLeft className="h-4 w-4" />
         </Button>
-
         <Button
           variant="ghost"
           size="sm"
           onClick={scrollRightFn}
           disabled={!canRight}
-          className="absolute right-0 top-1/2 -translate-y-1/2 z-20 bg-background/80 backdrop-blur-sm shadow-sm md:hidden"
+          className="absolute right-1 top-1/2 -translate-y-1/2 z-20 bg-background/80 backdrop-blur-sm shadow-sm md:hidden"
           aria-label="Scroll kategori ke kanan"
         >
           <ChevronRight className="h-4 w-4" />
         </Button>
 
-        {/* list kategori dengan padding kiri/kanan supaya panah tidak nutup */}
+        {/* List + SPACER di kiri/kanan supaya pill tidak pernah berada di bawah panah */}
         <div
           ref={scrollRef}
-          className="flex gap-2 overflow-x-auto pb-2 scrollbar-hide scroll-smooth snap-x snap-mandatory px-14 md:px-0"
+          className="flex gap-2 overflow-x-auto pb-2 scrollbar-hide scroll-smooth snap-x snap-mandatory px-4 md:px-0"
         >
+          {/* spacer kiri = lebar area panah */}
+          <span aria-hidden className="shrink-0 w-12 md:w-0" />
           <div className="flex gap-2 min-w-max" role="tablist" aria-label="Kategori menu">
             {categories.map((category) => (
               <Button
@@ -104,6 +105,8 @@ export function MenuFilters({ categories, activeCategory, onCategoryChange }: Me
               </Button>
             ))}
           </div>
+          {/* spacer kanan = lebar area panah */}
+          <span aria-hidden className="shrink-0 w-12 md:w-0" />
         </div>
       </div>
     </div>
