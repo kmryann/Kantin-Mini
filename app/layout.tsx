@@ -60,7 +60,7 @@ export default function RootLayout({
         <meta name="theme-color" content="#d97706" />
       </head>
       <body className="font-sans antialiased">
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+        <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
           <Suspense fallback={null}>{children}</Suspense>
           <Toaster />
         </ThemeProvider>
