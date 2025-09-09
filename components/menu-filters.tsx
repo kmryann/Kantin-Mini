@@ -47,7 +47,7 @@ export function MenuFilters({ categories, activeCategory, onCategoryChange }: Me
         <Button
           variant="ghost"
           size="icon"
-          className="md:hidden shrink-0 bg-background/80 shadow-sm"
+          className="md:hidden shrink-0 bg-background/80 shadow-none"
           onClick={() => scrollBy(-240)}
           disabled={!canLeft}
           aria-label="Scroll kategori ke kiri"
@@ -61,8 +61,8 @@ export function MenuFilters({ categories, activeCategory, onCategoryChange }: Me
           className="relative flex-1 overflow-x-auto scrollbar-hide scroll-smooth"
         >
           {/* Gradient edges for nice fade */}
-          <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-6 bg-gradient-to-r from-background to-transparent md:hidden" />
-          <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-6 bg-gradient-to-l from-background to-transparent md:hidden" />
+          <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-4 bg-gradient-to-r from-background to-transparent md:hidden" />
+          <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-4 bg-gradient-to-l from-background to-transparent md:hidden" />
 
           {/* Pills */}
           <div className="flex min-w-max gap-2 px-1 py-1" role="tablist" aria-label="Kategori menu">
@@ -81,8 +81,8 @@ export function MenuFilters({ categories, activeCategory, onCategoryChange }: Me
                   "whitespace-nowrap transition-all duration-200 snap-start flex-shrink-0",
                   "focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2",
                   activeCategory === category
-                    ? "shadow-md hover:opacity-90"
-                    : "bg-card hover:bg-muted border-border text-foreground hover:text-foreground",
+                    ? "hover:opacity-90 shadow-none"
+                    : "bg-card hover:bg-muted border-border text-foreground hover:text-foreground shadow-none",
                 )}
                 role="tab"
                 aria-selected={activeCategory === category}
@@ -101,7 +101,7 @@ export function MenuFilters({ categories, activeCategory, onCategoryChange }: Me
         <Button
           variant="ghost"
           size="icon"
-          className="md:hidden shrink-0 bg-background/80 shadow-sm"
+          className="md:hidden shrink-0 bg-background/80 shadow-none"
           onClick={() => scrollBy(240)}
           disabled={!canRight}
           aria-label="Scroll kategori ke kanan"
