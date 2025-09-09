@@ -29,14 +29,14 @@ export function Footer() {
               <div className="flex items-start gap-3">
                 <MapPin className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" aria-hidden="true" />
                 <span className="text-muted-foreground">
-                  Jl. Raya Merdeka No. 123
+                  Gang Melong Kaler I no.1
                   <br />
-                  Jakarta Selatan 12345
+                  Jalan Lengkong Besar, Kota Bandung
                 </span>
               </div>
               <div className="flex items-center gap-3">
                 <Clock className="h-4 w-4 text-primary flex-shrink-0" aria-hidden="true" />
-                <span className="text-muted-foreground">Senin - Minggu: 07:00 - 21:00</span>
+                <span className="text-muted-foreground">Senin - Jumat: 08:00 - 20:00</span>
               </div>
               <div className="flex items-center gap-3">
                 <Phone className="h-4 w-4 text-primary flex-shrink-0" aria-hidden="true" />
