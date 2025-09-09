@@ -24,8 +24,7 @@ export function MenuFilters({ categories, activeCategory, onCategoryChange }: Me
     setCanRight(scrollLeft + clientWidth < scrollWidth - 1)
   }
 
-  const scrollLeftFn = () => scrollRef.current?.scrollBy({ left: -220, behavior: "smooth" })
-  const scrollRightFn = () => scrollRef.current?.scrollBy({ left: 220, behavior: "smooth" })
+  const scrollBy = (dx: number) => scrollRef.current?.scrollBy({ left: dx, behavior: "smooth" })
 
   useEffect(() => {
     const el = scrollRef.current
@@ -42,41 +41,31 @@ export function MenuFilters({ categories, activeCategory, onCategoryChange }: Me
 
   return (
     <div className="w-full" role="group" aria-label="Filter kategori menu">
-      <div className="relative">
-        {/* Fade kiri/kanan agar transisi halus */}
-        <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-12 bg-gradient-to-r from-background to-transparent z-10 md:hidden" />
-        <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-12 bg-gradient-to-l from-background to-transparent z-10 md:hidden" />
-
-        {/* Panah */}
+      {/* Row: Arrow - ScrollArea - Arrow */}
+      <div className="flex items-center gap-2">
+        {/* Left arrow (mobile only) */}
         <Button
           variant="ghost"
-          size="sm"
-          onClick={scrollLeftFn}
+          size="icon"
+          className="md:hidden shrink-0 bg-background/80 shadow-sm"
+          onClick={() => scrollBy(-240)}
           disabled={!canLeft}
-          className="absolute left-1 top-1/2 -translate-y-1/2 z-20 bg-background/80 backdrop-blur-sm shadow-sm md:hidden"
           aria-label="Scroll kategori ke kiri"
         >
           <ChevronLeft className="h-4 w-4" />
         </Button>
-        <Button
-          variant="ghost"
-          size="sm"
-          onClick={scrollRightFn}
-          disabled={!canRight}
-          className="absolute right-1 top-1/2 -translate-y-1/2 z-20 bg-background/80 backdrop-blur-sm shadow-sm md:hidden"
-          aria-label="Scroll kategori ke kanan"
-        >
-          <ChevronRight className="h-4 w-4" />
-        </Button>
 
-        {/* List + SPACER di kiri/kanan supaya pill tidak pernah berada di bawah panah */}
+        {/* Scroll container */}
         <div
           ref={scrollRef}
-          className="flex gap-2 overflow-x-auto pb-2 scrollbar-hide scroll-smooth snap-x snap-mandatory px-4 md:px-0"
+          className="relative flex-1 overflow-x-auto scrollbar-hide scroll-smooth"
         >
-          {/* spacer kiri = lebar area panah */}
-          <span aria-hidden className="shrink-0 w-12 md:w-0" />
-          <div className="flex gap-2 min-w-max" role="tablist" aria-label="Kategori menu">
+          {/* Gradient edges for nice fade */}
+          <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-6 bg-gradient-to-r from-background to-transparent md:hidden" />
+          <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-6 bg-gradient-to-l from-background to-transparent md:hidden" />
+
+          {/* Pills */}
+          <div className="flex min-w-max gap-2 px-1 py-1" role="tablist" aria-label="Kategori menu">
             {categories.map((category) => (
               <Button
                 key={category}
@@ -89,7 +78,8 @@ export function MenuFilters({ categories, activeCategory, onCategoryChange }: Me
                     : undefined
                 }
                 className={cn(
-                  "whitespace-nowrap transition-all duration-200 snap-start flex-shrink-0 focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2",
+                  "whitespace-nowrap transition-all duration-200 snap-start flex-shrink-0",
+                  "focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2",
                   activeCategory === category
                     ? "shadow-md hover:opacity-90"
                     : "bg-card hover:bg-muted border-border text-foreground hover:text-foreground",
@@ -105,9 +95,19 @@ export function MenuFilters({ categories, activeCategory, onCategoryChange }: Me
               </Button>
             ))}
           </div>
-          {/* spacer kanan = lebar area panah */}
-          <span aria-hidden className="shrink-0 w-12 md:w-0" />
         </div>
+
+        {/* Right arrow (mobile only) */}
+        <Button
+          variant="ghost"
+          size="icon"
+          className="md:hidden shrink-0 bg-background/80 shadow-sm"
+          onClick={() => scrollBy(240)}
+          disabled={!canRight}
+          aria-label="Scroll kategori ke kanan"
+        >
+          <ChevronRight className="h-4 w-4" />
+        </Button>
       </div>
     </div>
   )
