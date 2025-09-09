@@ -1,51 +1,51 @@
-'use client';
+"use client"
 
-import { Button } from '@/components/ui/button';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
-import { cn } from '@/lib/utils';
-import { useEffect, useRef, useState } from 'react';
+import { Button } from "@/components/ui/button"
+import { ChevronLeft, ChevronRight } from "lucide-react"
+import { cn } from "@/lib/utils"
+import { useEffect, useRef, useState } from "react"
 
 interface MenuFiltersProps {
-  categories: string[];
-  activeCategory: string;
-  onCategoryChange: (category: string) => void;
+  categories: string[]
+  activeCategory: string
+  onCategoryChange: (category: string) => void
 }
 
 export function MenuFilters({ categories, activeCategory, onCategoryChange }: MenuFiltersProps) {
-  const scrollRef = useRef<HTMLDivElement>(null);
-  const [canLeft, setCanLeft] = useState(false);
-  const [canRight, setCanRight] = useState(false);
+  const scrollRef = useRef<HTMLDivElement>(null)
+  const [canLeft, setCanLeft] = useState(false)
+  const [canRight, setCanRight] = useState(false)
 
   const updateArrows = () => {
-    const el = scrollRef.current;
-    if (!el) return;
-    const { scrollLeft, scrollWidth, clientWidth } = el;
-    setCanLeft(scrollLeft > 0);
-    setCanRight(scrollLeft + clientWidth < scrollWidth - 1);
-  };
+    const el = scrollRef.current
+    if (!el) return
+    const { scrollLeft, scrollWidth, clientWidth } = el
+    setCanLeft(scrollLeft > 0)
+    setCanRight(scrollLeft + clientWidth < scrollWidth - 1)
+  }
 
-  const scrollLeftFn = () => scrollRef.current?.scrollBy({ left: -220, behavior: 'smooth' });
-  const scrollRightFn = () => scrollRef.current?.scrollBy({ left: 220, behavior: 'smooth' });
+  const scrollLeftFn = () => scrollRef.current?.scrollBy({ left: -220, behavior: "smooth" })
+  const scrollRightFn = () => scrollRef.current?.scrollBy({ left: 220, behavior: "smooth" })
 
   useEffect(() => {
-    const el = scrollRef.current;
-    if (!el) return;
-    updateArrows();
-    el.addEventListener('scroll', updateArrows, { passive: true });
-    const ro = new ResizeObserver(updateArrows);
-    ro.observe(el);
+    const el = scrollRef.current
+    if (!el) return
+    updateArrows()
+    el.addEventListener("scroll", updateArrows, { passive: true })
+    const ro = new ResizeObserver(updateArrows)
+    ro.observe(el)
     return () => {
-      el.removeEventListener('scroll', updateArrows);
-      ro.disconnect();
-    };
-  }, []);
+      el.removeEventListener("scroll", updateArrows)
+      ro.disconnect()
+    }
+  }, [])
 
   return (
     <div className="w-full" role="group" aria-label="Filter kategori menu">
       <div className="relative">
-        {/* gradient fade kiri/kanan agar teks tidak terasa ketimpa */}
-        <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-8 bg-gradient-to-r from-background to-transparent md:hidden" />
-        <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-background to-transparent md:hidden" />
+        {/* gradient kiri/kanan */}
+        <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-10 bg-gradient-to-r from-background to-transparent z-10 md:hidden" />
+        <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-10 bg-gradient-to-l from-background to-transparent z-10 md:hidden" />
 
         {/* tombol panah */}
         <Button
@@ -70,28 +70,28 @@ export function MenuFilters({ categories, activeCategory, onCategoryChange }: Me
           <ChevronRight className="h-4 w-4" />
         </Button>
 
-        {/* list kategori; padding kiri/kanan memberi ruang untuk tombol */}
+        {/* list kategori dengan padding kiri/kanan supaya panah tidak nutup */}
         <div
           ref={scrollRef}
-          className="flex gap-2 overflow-x-auto pb-2 scrollbar-hide scroll-smooth snap-x snap-mandatory px-12 md:px-0"
+          className="flex gap-2 overflow-x-auto pb-2 scrollbar-hide scroll-smooth snap-x snap-mandatory px-14 md:px-0"
         >
-          <div className="flex gap-2 min-w-max px-1" role="tablist" aria-label="Kategori menu">
-            {categories.map(category => (
+          <div className="flex gap-2 min-w-max" role="tablist" aria-label="Kategori menu">
+            {categories.map((category) => (
               <Button
                 key={category}
-                variant={activeCategory === category ? 'default' : 'outline'}
+                variant={activeCategory === category ? "default" : "outline"}
                 size="sm"
                 onClick={() => onCategoryChange(category)}
                 style={
                   activeCategory === category
-                    ? { backgroundColor: '#d97706', color: '#ffffff', borderColor: '#d97706' }
+                    ? { backgroundColor: "#d97706", color: "#ffffff", borderColor: "#d97706" }
                     : undefined
                 }
                 className={cn(
-                  'whitespace-nowrap transition-all duration-200 snap-start flex-shrink-0 focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2',
+                  "whitespace-nowrap transition-all duration-200 snap-start flex-shrink-0 focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2",
                   activeCategory === category
-                    ? 'shadow-md hover:opacity-90'
-                    : 'bg-card hover:bg-muted border-border text-foreground hover:text-foreground',
+                    ? "shadow-md hover:opacity-90"
+                    : "bg-card hover:bg-muted border-border text-foreground hover:text-foreground",
                 )}
                 role="tab"
                 aria-selected={activeCategory === category}
@@ -107,5 +107,5 @@ export function MenuFilters({ categories, activeCategory, onCategoryChange }: Me
         </div>
       </div>
     </div>
-  );
+  )
 }
