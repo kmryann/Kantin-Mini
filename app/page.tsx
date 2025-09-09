@@ -1,5 +1,5 @@
 import { NavBar } from "@/components/nav-bar"
-import { Hero } from "@/components/hero"
+import Hero from "@/components/hero"
 import { MenuSection } from "@/components/menu-section"
 import { About } from "@/components/about"
 import { Contact } from "@/components/contact"
