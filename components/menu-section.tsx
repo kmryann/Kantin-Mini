@@ -27,7 +27,7 @@ export function MenuSection() {
   const [searchQuery, setSearchQuery] = useState<string>("")
   const [loading, setLoading] = useState(true)
 
-  // Load menu data
+  // Ambil data menu
   useEffect(() => {
     const loadMenuData = async () => {
       try {
@@ -48,25 +48,33 @@ export function MenuSection() {
     loadMenuData()
   }, [])
 
-  // Filter items based on category and search
+  // Normalisasi string: lowercase + hapus diakritik + trim
+  const normalize = (str: string | undefined) =>
+    (str ?? "")
+      .toLowerCase()
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .trim()
+
+  // Filter kategori + pencarian
   useEffect(() => {
     if (!menuData) return
 
     let filtered = menuData.items
 
-    // Filter by category
+    // Filter kategori
     if (activeCategory !== "Semua") {
       filtered = filtered.filter((item) => item.category === activeCategory)
     }
 
-    // Filter by search query
+    // Filter pencarian
     if (searchQuery.trim()) {
-      const query = searchQuery.toLowerCase()
+      const q = normalize(searchQuery)
       filtered = filtered.filter(
         (item) =>
-          item.name.toLowerCase().includes(query) ||
-          item.description.toLowerCase().includes(query) ||
-          item.category.toLowerCase().includes(query),
+          normalize(item.name).includes(q) ||
+          normalize(item.description).includes(q) ||
+          normalize(item.category).includes(q)
       )
     }
 
@@ -78,10 +86,7 @@ export function MenuSection() {
       <section id="menu" className="py-16 bg-background" aria-label="Menu makanan dan minuman">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center" role="status" aria-live="polite">
-            <div
-              className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary mx-auto"
-              aria-hidden="true"
-            ></div>
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary mx-auto" aria-hidden="true"></div>
             <p className="mt-4 text-muted-foreground">Memuat menu...</p>
           </div>
         </div>
@@ -106,7 +111,7 @@ export function MenuSection() {
   return (
     <section id="menu" className="py-16 bg-background" aria-label="Menu makanan dan minuman">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
+        {/* Header */}
         <header className="text-center mb-12">
           <div className="flex items-center justify-center gap-3 mb-4">
             <Utensils className="h-8 w-8 text-primary" aria-hidden="true" />
@@ -127,18 +132,12 @@ export function MenuSection() {
           <MenuFilters categories={categories} activeCategory={activeCategory} onCategoryChange={setActiveCategory} />
         </div>
 
-        {/* Results Info */}
+        {/* Info Hasil */}
         <div className="mb-6">
           <p className="text-sm text-muted-foreground" aria-live="polite">
-            {searchQuery ? (
-              <>
-                Menampilkan {filteredItems.length} hasil untuk "{searchQuery}"
-              </>
-            ) : (
-              <>
-                Menampilkan {filteredItems.length} menu {activeCategory !== "Semua" ? `kategori ${activeCategory}` : ""}
-              </>
-            )}
+            {searchQuery
+              ? `Menampilkan ${filteredItems.length} hasil untuk "${searchQuery}"`
+              : `Menampilkan ${filteredItems.length} menu${activeCategory !== "Semua" ? ` kategori ${activeCategory}` : ""}`}
           </p>
         </div>
 

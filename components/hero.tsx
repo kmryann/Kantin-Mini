@@ -31,7 +31,7 @@ export function Hero() {
           <div className="text-center lg:text-left space-y-6 animate-fade-in">
             <div className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-4 py-2 rounded-full text-sm font-medium animate-bounce-in">
               <Star className="h-4 w-4 fill-current" aria-hidden="true" />
-              <span>4.8/5 Rating Pelanggan</span>
+              <span>5/5 Rating Pelanggan</span>
             </div>
 
             <div className="space-y-4">
@@ -53,7 +53,7 @@ export function Hero() {
                 role="listitem"
               >
                 <Clock className="h-4 w-4 text-primary" aria-hidden="true" />
-                <span className="font-medium">Buka 07:00 - 21:00</span>
+                <span className="font-medium">Buka 09:00 - 20:00</span>
               </div>
               <div
                 className="flex items-center justify-center sm:justify-start gap-2 bg-card/50 px-3 py-2 rounded-lg"
@@ -88,9 +88,9 @@ export function Hero() {
                 </Button>
               </div>
 
-              <p className="text-xs sm:text-sm text-muted-foreground text-center lg:text-left">
+              {/* <p className="text-xs sm:text-sm text-muted-foreground text-center lg:text-left">
                 📞 Respon cepat dalam 5 menit • 🚚 Gratis ongkir minimal Rp 50.000
-              </p>
+              </p> */}
             </div>
           </div>
 
@@ -113,8 +113,8 @@ export function Hero() {
                 >
                   <div className="flex items-center justify-between">
                     <div>
-                      <h3 className="font-bold text-foreground text-sm sm:text-base mb-1">Paket Nasi Spesial</h3>
-                      <p className="text-xs sm:text-sm text-muted-foreground">Nasi + Ayam + Sambal + Sayur</p>
+                      <h3 className="font-bold text-foreground text-sm sm:text-base mb-1">Chicken Katsu</h3>
+                      <p className="text-xs sm:text-sm text-muted-foreground">Saus BBQ/Lada Hitam/Lava</p>
                     </div>
                     <div className="text-right">
                       <span
