@@ -1,0 +1,101 @@
+{
+  "categories": ["Paket Nasi", "Pempek", "Kapten Chicken", "Minuman", "Snack"],
+  "items": [
+    {
+      "id": 1,
+      "name": "Paket Nasi Ayam Bakar",
+      "category": "Paket Nasi",
+      "price": 22000,
+      "description": "Nasi putih dengan ayam bakar bumbu kecap, lalapan segar, dan sambal terasi",
+      "image": "/placeholder.svg?height=300&width=400"
+    },
+    {
+      "id": 2,
+      "name": "Paket Nasi Ayam Goreng",
+      "category": "Paket Nasi",
+      "price": 20000,
+      "description": "Nasi putih dengan ayam goreng kremes, lalapan, dan sambal kecap",
+      "image": "/placeholder.svg?height=300&width=400"
+    },
+    {
+      "id": 3,
+      "name": "Paket Nasi Rendang",
+      "category": "Paket Nasi",
+      "price": 25000,
+      "description": "Nasi putih dengan rendang daging sapi empuk dan bumbu rempah khas Padang",
+      "image": "/placeholder.svg?height=300&width=400"
+    },
+    {
+      "id": 4,
+      "name": "Pempek Kapal Selam",
+      "category": "Pempek",
+      "price": 15000,
+      "description": "Pempek ikan tenggiri dengan telur di dalamnya, disajikan dengan kuah cuko asam pedas",
+      "image": "/placeholder.svg?height=300&width=400"
+    },
+    {
+      "id": 5,
+      "name": "Pempek Lenjer",
+      "category": "Pempek",
+      "price": 12000,
+      "description": "Pempek ikan berbentuk bulat panjang, tekstur kenyal dengan kuah cuko segar",
+      "image": "/placeholder.svg?height=300&width=400"
+    },
+    {
+      "id": 6,
+      "name": "Ayam Geprek",
+      "category": "Kapten Chicken",
+      "price": 18000,
+      "description": "Ayam goreng crispy yang digeprek dengan sambal bawang pedas level 1-5",
+      "image": "/placeholder.svg?height=300&width=400"
+    },
+    {
+      "id": 7,
+      "name": "Ayam Bakar Madu",
+      "category": "Kapten Chicken",
+      "price": 23000,
+      "description": "Ayam bakar dengan bumbu madu manis gurih, disajikan dengan nasi dan lalapan",
+      "image": "/placeholder.svg?height=300&width=400"
+    },
+    {
+      "id": 8,
+      "name": "Es Teh Manis",
+      "category": "Minuman",
+      "price": 5000,
+      "description": "Teh manis dingin segar, minuman klasik Indonesia yang menyegarkan",
+      "image": "/placeholder.svg?height=300&width=400"
+    },
+    {
+      "id": 9,
+      "name": "Es Jeruk",
+      "category": "Minuman",
+      "price": 8000,
+      "description": "Jus jeruk segar dengan es batu, kaya vitamin C dan menyegarkan",
+      "image": "/placeholder.svg?height=300&width=400"
+    },
+    {
+      "id": 10,
+      "name": "Kopi Tubruk",
+      "category": "Minuman",
+      "price": 7000,
+      "description": "Kopi hitam tradisional Indonesia dengan ampas, rasa kuat dan autentik",
+      "image": "/placeholder.svg?height=300&width=400"
+    },
+    {
+      "id": 11,
+      "name": "Kerupuk Udang",
+      "category": "Snack",
+      "price": 3000,
+      "description": "Kerupuk udang renyah sebagai pelengkap makanan atau camilan",
+      "image": "/placeholder.svg?height=300&width=400"
+    },
+    {
+      "id": 12,
+      "name": "Emping Goreng",
+      "category": "Snack",
+      "price": 4000,
+      "description": "Emping melinjo goreng renyah, camilan tradisional Indonesia",
+      "image": "/placeholder.svg?height=300&width=400"
+    }
+  ]
+}
