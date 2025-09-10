@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 
 // --- KONFIG ---
 const HERO_IMG = '/images/hero-kantin.png'; // letakkan di /public/hero.jpg
-const PHONE_E164 = '62812XXXXXXX'; // nomor WA tanpa + atau spasi
+const PHONE_E164 = '6285174241304'; // nomor WA tanpa + atau spasi
 const WA_TEXT = 'Halo Kantin Mini, saya ingin bertanya tentang menu hari ini.';
 
 const waUrl = `https://wa.me/${PHONE_E164}?text=${encodeURIComponent(WA_TEXT)}`;
