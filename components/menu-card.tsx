@@ -11,19 +11,18 @@ import {
   DialogTitle,
   DialogDescription,
 } from '@/components/ui/dialog';
-import { Button } from '@/components/ui/button';
 
 // ===== Helper Badge Dinamis =====
 const getCategoryMeta = (raw: string) => {
   const key = (raw || '').toLowerCase().trim();
   const map: Record<string, { className: string; emoji: string }> = {
-    makanan: { className: 'bg-emerald-600 text-white dark:bg-emerald-500', emoji: '🍽️' },
-    minuman: { className: 'bg-sky-600 text-white dark:bg-sky-500', emoji: '☕' },
-    snack: { className: 'bg-amber-600 text-white dark:bg-amber-500', emoji: '🍪' },
-    dessert: { className: 'bg-pink-600 text-white dark:bg-pink-500', emoji: '🍰' },
-    pedas: { className: 'bg-red-600 text-white dark:bg-red-500', emoji: '🌶️' },
+    makanan: { className: 'bg-emerald-600 text-white dark:bg-emerald-500 dark:text-white', emoji: '🍽️' },
+    minuman: { className: 'bg-sky-600 text-white dark:bg-sky-500 dark:text-white', emoji: '☕' },
+    snack:   { className: 'bg-amber-600 text-white dark:bg-amber-500 dark:text-slate-900', emoji: '🍪' },
+    dessert: { className: 'bg-pink-600 text-white dark:bg-pink-500 dark:text-white', emoji: '🍰' },
+    pedas:   { className: 'bg-red-600 text-white dark:bg-red-500 dark:text-white', emoji: '🌶️' },
   };
-  return map[key] ?? { className: 'bg-zinc-200 text-zinc-800 dark:bg-zinc-700', emoji: '🏷️' };
+  return map[key] ?? { className: 'bg-zinc-200 text-zinc-800 dark:bg-zinc-700 dark:text-white', emoji: '🏷️' };
 };
 
 interface MenuItem {
@@ -75,11 +74,10 @@ export function MenuCard({ item }: MenuCardProps) {
               {item.name}
             </h3>
 
-            {/* Kategori rapi di bawah judul */}
+            {/* Kategori */}
             <div className="flex items-center gap-2">
               <Badge
-                variant="outline"
-                className={`text-[11px] px-2 py-0.5 rounded-full flex items-center gap-1 border border-border/70 ${meta.className} bg-background`}
+                className={`text-[11px] px-2 py-0.5 rounded-full flex items-center gap-1 ${meta.className} shadow-xs`}
               >
                 <span aria-hidden className="text-[12px]">{meta.emoji}</span>
                 <span className="font-medium">{item.category}</span>
@@ -126,12 +124,9 @@ export function MenuCard({ item }: MenuCardProps) {
           {/* Deskripsi */}
           <p className="text-sm text-muted-foreground">{item.description}</p>
 
-          {/* Footer modal: kiri kategori, kanan harga */}
+          {/* Footer modal: kategori kiri, harga kanan */}
           <div className="flex items-center justify-between">
-            <Badge
-              variant="outline"
-              className={`text-xs flex items-center gap-1 ${meta.className}`}
-            >
+            <Badge className={`text-xs flex items-center gap-1 ${meta.className}`}>
               <span aria-hidden>{meta.emoji}</span>
               {item.category}
             </Badge>
