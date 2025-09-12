@@ -67,16 +67,16 @@ export function Footer() {
 
         {/* Bottom Bar */}
         <div className="border-t border-border mt-8 pt-8">
-          <div className="flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-muted-foreground">
+          <div className="text-sm text-muted-foreground text-center">
             <p>© {currentYear} Kantin Mini. Semua hak dilindungi.</p>
-            <nav className="flex gap-6" aria-label="Legal links">
+            {/* <nav className="flex gap-6" aria-label="Legal links">
               <button className="hover:text-primary transition-colors duration-200 focus:text-primary focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-sm px-1 py-0.5">
                 Kebijakan Privasi
               </button>
               <button className="hover:text-primary transition-colors duration-200 focus:text-primary focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-sm px-1 py-0.5">
                 Syarat & Ketentuan
               </button>
-            </nav>
+            </nav> */}
           </div>
         </div>
       </div>
