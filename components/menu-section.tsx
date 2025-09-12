@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useMemo } from "react"
 import { MenuFilters } from "@/components/menu-filters"
 import { MenuGrid } from "@/components/menu-grid"
 import { SearchBar } from "@/components/search-bar"
@@ -25,7 +25,7 @@ export function MenuSection() {
   const [filteredItems, setFilteredItems] = useState<MenuItem[]>([])
   const [activeCategory, setActiveCategory] = useState<string>("Semua")
   const [searchQuery, setSearchQuery] = useState<string>("")
-  const [debouncedQuery, setDebouncedQuery] = useState<string>("") // ← debounce
+  const [debouncedQuery, setDebouncedQuery] = useState<string>("")
   const [loading, setLoading] = useState(true)
 
   // Ambil data menu dari /public/menu.json
@@ -46,13 +46,13 @@ export function MenuSection() {
     loadMenuData()
   }, [])
 
-  // Debounce input pencarian (lebih ringan di HP)
+  // Debounce input pencarian
   useEffect(() => {
     const t = setTimeout(() => setDebouncedQuery(searchQuery), 180)
     return () => clearTimeout(t)
   }, [searchQuery])
 
-  // Normalisasi string: lowercase + hapus diakritik + trim
+  // Normalisasi string
   const normalize = (str: string | undefined) =>
     (str ?? "")
       .toLowerCase()
@@ -60,13 +60,22 @@ export function MenuSection() {
       .replace(/[\u0300-\u036f]/g, "")
       .trim()
 
-  // Bandingkan kategori dengan toleransi spasi/kapital
   const sameCat = (a?: string, b?: string) => normalize(a) === normalize(b)
+
+  // Hitung jumlah per kategori (untuk badge count di filter)
+  const counts = useMemo(() => {
+    if (!menuData) return undefined
+    const base = Object.fromEntries(menuData.categories.map((c) => [c, 0])) as Record<string, number>
+    for (const it of menuData.items) {
+      const k = menuData.categories.find((c) => sameCat(c, it.category))
+      if (k) base[k] = (base[k] ?? 0) + 1
+    }
+    return { Semua: menuData.items.length, ...base }
+  }, [menuData])
 
   // Filter kategori + pencarian (debounced)
   useEffect(() => {
     if (!menuData) return
-
     let filtered = menuData.items
 
     if (activeCategory !== "Semua") {
@@ -134,7 +143,12 @@ export function MenuSection() {
 
         {/* Category Filters */}
         <div className="mb-8">
-          <MenuFilters categories={categories} activeCategory={activeCategory} onCategoryChange={setActiveCategory} />
+          <MenuFilters
+            categories={categories}
+            active={activeCategory}                 // <-- ganti: activeCategory -> active
+            onChange={(val) => setActiveCategory(val)} // <-- ganti: onCategoryChange -> onChange
+            counts={counts}
+          />
         </div>
 
         {/* Info Hasil */}

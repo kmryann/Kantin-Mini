@@ -27,10 +27,11 @@ export function MenuFilters({ categories, active, onChange, counts, className }:
 
   const items = useMemo(() => (categories?.length ? categories : ["Semua"]), [categories])
 
+  // cek apakah scrollable
   useEffect(() => {
     const el = trackRef.current
     if (!el) return
-    const check = () => setCanScroll(el.scrollWidth > el.clientWidth + 4)
+    const check = () => setCanScroll(el.scrollWidth > el.clientWidth + 8)
     check()
     const ro = new ResizeObserver(check)
     ro.observe(el)
@@ -44,7 +45,7 @@ export function MenuFilters({ categories, active, onChange, counts, className }:
     const hide = () => setShowHint(false)
     el.addEventListener("scroll", hide, { passive: true })
     el.addEventListener("pointerdown", hide, { passive: true })
-    const timer = setTimeout(() => setShowHint(false), 3500) // auto-hilang
+    const timer = setTimeout(hide, 3500)
     return () => {
       el.removeEventListener("scroll", hide)
       el.removeEventListener("pointerdown", hide)
@@ -52,10 +53,24 @@ export function MenuFilters({ categories, active, onChange, counts, className }:
     }
   }, [])
 
+  // nudge kecil di awal biar jelas bisa digeser
+  useEffect(() => {
+    const el = trackRef.current
+    if (!el || !canScroll || !showHint) return
+    const nudge = async () => {
+      try {
+        el.scrollBy({ left: 36, behavior: "smooth" })
+        await new Promise((r) => setTimeout(r, 350))
+        el.scrollBy({ left: -36, behavior: "smooth" })
+      } catch {}
+    }
+    nudge()
+  }, [canScroll, showHint])
+
   const scrollBy = (dir: "left" | "right") => {
     const el = trackRef.current
     if (!el) return
-    const amount = Math.min(240, el.clientWidth * 0.85)
+    const amount = Math.min(280, el.clientWidth * 0.9)
     el.scrollBy({ left: dir === "left" ? -amount : amount, behavior: "smooth" })
   }
 
@@ -63,58 +78,57 @@ export function MenuFilters({ categories, active, onChange, counts, className }:
     <div
       className={cn(
         "sticky top-0 z-30 -mx-4 px-4 sm:mx-0 sm:px-0",
-        "bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/60",
+        "bg-background/90 backdrop-blur supports-[backdrop-filter]:bg-background/70",
         className
       )}
     >
       <div className="relative">
-        {/* Gradien hint kiri/kanan */}
-        {canScroll && (
-          <>
-            <div className="pointer-events-none absolute left-0 top-0 h-full w-6 from-background to-transparent bg-gradient-to-r" />
-            <div className="pointer-events-none absolute right-0 top-0 h-full w-6 from-transparent to-background bg-gradient-to-l" />
-          </>
-        )}
+        {/* gradient edges: lebih kuat saat bisa scroll */}
+        <div className="pointer-events-none absolute left-0 top-0 h-full w-8 z-10 from-background to-transparent bg-gradient-to-r" />
+        <div className="pointer-events-none absolute right-0 top-0 h-full w-8 z-10 from-transparent to-background bg-gradient-to-l" />
 
-        {/* Panah scroll */}
-        {canScroll && (
-          <>
-            <button
-              aria-label="Scroll kiri"
-              onClick={() => scrollBy("left")}
-              className="absolute left-1 top-1/2 -translate-y-1/2 z-10 hidden xs:flex items-center justify-center rounded-full p-1 bg-background/90 shadow ring-1 ring-border hover:bg-accent/10"
-            >
-              <ChevronLeft className="size-5" />
-            </button>
-            <button
-              aria-label="Scroll kanan"
-              onClick={() => scrollBy("right")}
-              className="absolute right-1 top-1/2 -translate-y-1/2 z-10 hidden xs:flex items-center justify-center rounded-full p-1 bg-background/90 shadow ring-1 ring-border hover:bg-accent/10"
-            >
-              <ChevronRight className="size-5" />
-            </button>
-          </>
-        )}
+        {/* ARROWS: selalu tampil (mobile juga) */}
+        <button
+          type="button"
+          aria-label="Scroll kiri"
+          aria-disabled={!canScroll}
+          onClick={() => scrollBy("left")}
+          className={cn(
+            "absolute left-1 top-1/2 -translate-y-1/2 z-20 flex items-center justify-center rounded-full p-1.5",
+            "bg-background shadow ring-1 ring-border hover:bg-accent/10 active:scale-95 transition",
+            !canScroll && "opacity-40"
+          )}
+        >
+          <ChevronLeft className="size-5" />
+        </button>
+        <button
+          type="button"
+          aria-label="Scroll kanan"
+          aria-disabled={!canScroll}
+          onClick={() => scrollBy("right")}
+          className={cn(
+            "absolute right-1 top-1/2 -translate-y-1/2 z-20 flex items-center justify-center rounded-full p-1.5",
+            "bg-background shadow ring-1 ring-border hover:bg-accent/10 active:scale-95 transition",
+            !canScroll && "opacity-40"
+          )}
+        >
+          <ChevronRight className="size-5" />
+        </button>
 
-        {/* Track chips */}
+        {/* TRACK */}
         <div
           ref={trackRef}
           role="tablist"
           aria-label="Kategori menu"
           className={cn(
-            "relative flex gap-2 overflow-x-auto scrollbar-hide px-1 py-2",
+            "relative z-20 flex gap-2 overflow-x-auto scrollbar-hide px-1 py-2",
             "snap-x snap-mandatory"
           )}
-          // mask untuk hint bisa digeser
           style={{
             WebkitMaskImage:
-              canScroll
-                ? "linear-gradient(90deg, transparent 0, black 16px, black calc(100% - 16px), transparent 100%)"
-                : undefined,
+              "linear-gradient(90deg, transparent 0, black 16px, black calc(100% - 16px), transparent 100%)",
             maskImage:
-              canScroll
-                ? "linear-gradient(90deg, transparent 0, black 16px, black calc(100% - 16px), transparent 100%)"
-                : undefined,
+              "linear-gradient(90deg, transparent 0, black 16px, black calc(100% - 16px), transparent 100%)",
           }}
         >
           {items.map((label) => {
@@ -123,12 +137,14 @@ export function MenuFilters({ categories, active, onChange, counts, className }:
             return (
               <button
                 key={label}
+                type="button"
                 role="tab"
                 aria-selected={isActive}
                 onClick={() => onChange(label)}
                 className={cn(
                   "snap-start min-h-11 h-11 px-3.5 rounded-full inline-flex items-center gap-2",
                   "whitespace-nowrap text-sm font-medium transition-all ring-offset-background",
+                  "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40",
                   isActive
                     ? "bg-primary text-primary-foreground ring-2 ring-primary/30 shadow-sm"
                     : "bg-muted text-foreground/80 hover:bg-accent/20"
@@ -151,10 +167,10 @@ export function MenuFilters({ categories, active, onChange, counts, className }:
           })}
         </div>
 
-        {/* Chip hint "Geser →" (muncul sekali) */}
-        {canScroll && showHint && (
-          <div className="pointer-events-none absolute right-3 -bottom-2 translate-y-full">
-            <div className="flex items-center gap-1 rounded-full bg-foreground/90 text-background text-[11px] px-2 py-1 shadow">
+        {/* HINT "Geser →" (hilang saat interaksi) */}
+        {showHint && (
+          <div className="pointer-events-none absolute right-3 -bottom-2 translate-y-full z-30">
+            <div className="flex items-center gap-1 rounded-full bg-foreground text-background text-[11px] px-2 py-1 shadow animate-pulse">
               <Hand className="size-3.5" />
               <span>Geser</span>
               <ChevronRight className="size-3.5" />
