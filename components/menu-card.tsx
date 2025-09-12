@@ -1,9 +1,30 @@
 'use client';
 
+import Image from 'next/image';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { useState } from 'react';
-import Image from 'next/image';
+import {
+  Dialog,
+  DialogTrigger,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+} from '@/components/ui/dialog';
+import { Button } from '@/components/ui/button';
+
+// ===== Helper Badge Dinamis =====
+const getCategoryMeta = (raw: string) => {
+  const key = (raw || '').toLowerCase().trim();
+  const map: Record<string, { className: string; emoji: string }> = {
+    makanan: { className: 'bg-emerald-600 text-white dark:bg-emerald-500', emoji: '🍽️' },
+    minuman: { className: 'bg-sky-600 text-white dark:bg-sky-500', emoji: '☕' },
+    snack: { className: 'bg-amber-600 text-white dark:bg-amber-500', emoji: '🍪' },
+    dessert: { className: 'bg-pink-600 text-white dark:bg-pink-500', emoji: '🍰' },
+    pedas: { className: 'bg-red-600 text-white dark:bg-red-500', emoji: '🌶️' },
+  };
+  return map[key] ?? { className: 'bg-zinc-200 text-zinc-800 dark:bg-zinc-700', emoji: '🏷️' };
+};
 
 interface MenuItem {
   id: number;
@@ -20,73 +41,109 @@ interface MenuCardProps {
 }
 
 export function MenuCard({ item }: MenuCardProps) {
-  const [imageLoading, setImageLoading] = useState(true);
+  const formatPrice = (price: number) =>
+    new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR' }).format(price);
 
-  const formatPrice = (price: number) => {
-    return new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR' }).format(price);
-  };
+  const getImageAlt = (x: MenuItem) => `${x.name} - ${x.description} dari kategori ${x.category}`;
 
-  const getImageAlt = (item: MenuItem) => {
-    return `${item.name} - ${item.description} dari kategori ${item.category}`;
-  };
+  const meta = getCategoryMeta(item.category);
 
   return (
-    <Card
-      className="group overflow-hidden bg-card border-border hover:shadow-lg transition-all duration-300 hover:scale-[1.02] focus-within:shadow-lg focus-within:scale-[1.02] animate-fade-in"
-      role="article"
-      aria-label={`Menu item: ${item.name}`}
-    >
-      <div className="aspect-[4/3] overflow-hidden relative">
-        {item.recommended && (
-          <div className="absolute top-2 right-2 z-10 bg-primary text-white text-xs font-semibold px-2 py-1 rounded shadow">
-            Recommended
+    <Dialog>
+      <DialogTrigger asChild>
+        <Card className="group overflow-hidden bg-card border-border hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 cursor-pointer rounded-xl">
+          {/* Gambar */}
+          <div className="aspect-[4/3] overflow-hidden relative">
+            {item.recommended && (
+              <div className="absolute top-2 right-2 z-10 bg-primary text-white text-xs font-semibold px-2 py-1 rounded shadow">
+                Recommended
+              </div>
+            )}
+            <Image
+              src={item.image || '/placeholder.svg?height=300&width=400'}
+              alt={getImageAlt(item)}
+              fill
+              className="object-cover group-hover:scale-105 transition-transform duration-300"
+              sizes="(max-width: 640px) 50vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
+            />
           </div>
-        )}
-        <Image
-          src={item.image || '/placeholder.svg?height=300&width=400'}
-          alt={getImageAlt(item)}
-          fill
-          className="object-cover group-hover:scale-105 transition-transform duration-300"
-          loading="lazy"
-          sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
-          onLoad={() => setImageLoading(false)}
-          onError={() => setImageLoading(false)}
-        />
-      </div>
 
-      <CardContent className="p-4 space-y-3">
-        <div className="space-y-2">
-          <div className="flex items-start justify-between gap-2">
-            <h3 className="font-semibold text-foreground text-balance leading-tight">
+          {/* Konten Card */}
+          <CardContent className="p-4 space-y-3">
+            {/* Judul */}
+            <h3 className="font-semibold text-foreground leading-tight line-clamp-1">
               {item.name}
             </h3>
+
+            {/* Kategori rapi di bawah judul */}
+            <div className="flex items-center gap-2">
+              <Badge
+                variant="outline"
+                className={`text-[11px] px-2 py-0.5 rounded-full flex items-center gap-1 border border-border/70 ${meta.className} bg-background`}
+              >
+                <span aria-hidden className="text-[12px]">{meta.emoji}</span>
+                <span className="font-medium">{item.category}</span>
+              </Badge>
+            </div>
+
+            {/* Deskripsi */}
+            <p className="text-sm text-muted-foreground line-clamp-2">{item.description}</p>
+
+            {/* Harga */}
+            <div className="flex justify-center pt-2">
+              <div
+                className="inline-flex items-center rounded-full text-base sm:text-lg font-bold px-4 py-2 shadow-sm"
+                style={{ backgroundColor: '#d97706', color: '#fff' }}
+              >
+                {formatPrice(item.price)}
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+      </DialogTrigger>
+
+      {/* Modal */}
+      <DialogContent className="sm:max-w-[640px]">
+        <DialogHeader>
+          <DialogTitle className="font-semibold">{item.name}</DialogTitle>
+          <DialogDescription className="sr-only">
+            Detail menu {item.name}
+          </DialogDescription>
+        </DialogHeader>
+
+        <div className="space-y-4">
+          {/* Gambar besar */}
+          <div className="relative aspect-[4/3] sm:aspect-[16/10] w-full overflow-hidden rounded-lg">
+            <Image
+              src={item.image || '/placeholder.svg?height=600&width=800'}
+              alt={getImageAlt(item)}
+              fill
+              className="object-cover"
+              sizes="100vw"
+            />
+          </div>
+
+          {/* Deskripsi */}
+          <p className="text-sm text-muted-foreground">{item.description}</p>
+
+          {/* Footer modal: kiri kategori, kanan harga */}
+          <div className="flex items-center justify-between">
             <Badge
-              variant="secondary"
-              className="text-xs whitespace-nowrap"
-              aria-label={`Kategori: ${item.category}`}
+              variant="outline"
+              className={`text-xs flex items-center gap-1 ${meta.className}`}
             >
+              <span aria-hidden>{meta.emoji}</span>
               {item.category}
             </Badge>
-          </div>
-
-          <p className="text-sm text-muted-foreground text-pretty line-clamp-2">
-            {item.description}
-          </p>
-        </div>
-
-        <div className="flex justify-center pt-2">
-          <div
-            className="inline-flex items-center rounded-full text-lg font-bold px-4 py-2 border-0 shadow-sm"
-            style={{
-              backgroundColor: '#d97706',
-              color: '#ffffff',
-            }}
-            aria-label={`Harga ${formatPrice(item.price).replace('Rp', 'rupiah')}`}
-          >
-            {formatPrice(item.price)}
+            <div
+              className="inline-flex items-center rounded-full text-lg font-bold px-4 py-2"
+              style={{ backgroundColor: '#d97706', color: '#fff' }}
+            >
+              {formatPrice(item.price)}
+            </div>
           </div>
         </div>
-      </CardContent>
-    </Card>
+      </DialogContent>
+    </Dialog>
   );
 }
