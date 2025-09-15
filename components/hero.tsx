@@ -27,7 +27,7 @@ export default function Hero() {
         <div className="absolute inset-0 bg-black/40 md:bg-black/45" />
       </div>
 
-      <div className="mx-auto max-w-5xl px-5 sm:px-6 md:px-8 py-16 sm:py-20 md:py-24">
+      <div className="mx-auto max-w-5xl px-5 sm:px-6 md:px-8 py-16 sm:py-20 md:py-24 animate-fade-in animate-delay-100">
         {/* Badge */}
         <div className="flex justify-center">
           <span
@@ -43,19 +43,19 @@ export default function Hero() {
         </div>
 
         {/* Headline */}
-        <h1 className="mt-5 text-center text-4xl font-extrabold tracking-tight text-white sm:text-5xl">
+        <h1 className="mt-5 text-center text-4xl font-extrabold tracking-tight text-white sm:text-5xl animate-slide-up animate-delay-200">
           Cita Rasa <span className="text-emerald-400">Terbaik</span>
           <br className="hidden sm:block" /> di Kantin Mini
         </h1>
 
         {/* Subheadline */}
-        <p className="mx-auto mt-4 max-w-2xl text-center text-base sm:text-lg text-white/90">
+        <p className="mx-auto mt-4 max-w-2xl text-center text-base sm:text-lg text-white/90 animate-slide-up animate-delay-300">
           Nikmati beragam pilihan menu lezat, mulai dari masakan Nusantara, Asia, hingga hidangan
           modern. Harga terjangkau, rasa istimewa, dan pelayanan ramah untuk semua pelanggan.
         </p>
 
         {/* Info pills */}
-        <div className="mx-auto mt-6 flex max-w-md flex-col gap-3">
+        <div className="mx-auto mt-6 flex max-w-md flex-col gap-3 animate-fade-in animate-delay-300">
           <div className="inline-flex items-center justify-center gap-2 rounded-lg bg-white/10 px-4 py-2 text-white/90 backdrop-blur">
             <Clock className="h-4 w-4 text-emerald-300" />
             <span>Buka 09:00 - 20:00</span>
@@ -67,7 +67,7 @@ export default function Hero() {
         </div>
 
         {/* CTA buttons */}
-        <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row">
+        <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row animate-bounce-in animate-delay-400">
           {/* Hijau solid */}
           <Button
             asChild

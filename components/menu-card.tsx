@@ -70,7 +70,7 @@ export function MenuCard({ item }: MenuCardProps) {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Card className="group overflow-hidden bg-card border-border hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 cursor-pointer rounded-xl">
+        <Card className="group overflow-hidden bg-card border-border hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 cursor-pointer rounded-xl animate-fade-in">
           {/* Gambar */}
           <div className="aspect-[4/3] overflow-hidden relative">
             {item.recommended && (
@@ -109,10 +109,7 @@ export function MenuCard({ item }: MenuCardProps) {
 
             {/* Harga */}
             <div className="flex justify-center pt-2">
-              <div
-                className="inline-flex items-center rounded-full text-base sm:text-lg font-bold px-4 py-2 shadow-sm"
-                style={{ backgroundColor: '#d97706', color: '#fff' }}
-              >
+              <div className="inline-flex items-center rounded-full text-base sm:text-lg font-bold px-4 py-2 shadow-sm bg-primary text-primary-foreground">
                 {formatPrice(item.price)}
               </div>
             </div>
@@ -148,10 +145,7 @@ export function MenuCard({ item }: MenuCardProps) {
               {meta.emoji && <span aria-hidden>{meta.emoji}</span>}
               {item.category}
             </Badge>
-            <div
-              className="inline-flex items-center rounded-full text-lg font-bold px-4 py-2"
-              style={{ backgroundColor: '#d97706', color: '#fff' }}
-            >
+            <div className="inline-flex items-center rounded-full text-lg font-bold px-4 py-2 bg-primary text-primary-foreground">
               {formatPrice(item.price)}
             </div>
           </div>

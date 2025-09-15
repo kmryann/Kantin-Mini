@@ -32,11 +32,11 @@ export function NavBar() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex-shrink-0">
-            <h1 className="text-xl font-bold text-foreground">
-              <a href="#" aria-label="Kantin Mini - Beranda">
-                Kantin Mini
-              </a>
-            </h1>
+            <a href="#" aria-label="Kantin Mini - Beranda" className="inline-flex items-center gap-2">
+              {/* Logo placeholder */}
+              <img src="/logo.svg" alt="Logo Kantin Mini" className="h-6 w-6" />
+              <span className="text-xl font-bold text-foreground tracking-tight">Kantin Mini</span>
+            </a>
           </div>
 
           {/* Desktop Navigation */}

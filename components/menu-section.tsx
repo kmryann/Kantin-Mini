@@ -123,10 +123,10 @@ export function MenuSection() {
   const categories = ["Semua", ...menuData.categories]
 
   return (
-    <section id="menu" className="py-16 bg-background" aria-label="Menu makanan dan minuman">
+    <section id="menu" className="py-16 bg-background animate-fade-in" aria-label="Menu makanan dan minuman">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <header className="text-center mb-12">
+        <header className="text-center mb-12 animate-slide-up">
           <div className="flex items-center justify-center gap-3 mb-4">
             <Utensils className="h-8 w-8 text-primary" aria-hidden="true" />
             <h2 className="text-3xl md:text-4xl font-bold text-foreground">Menu Kami</h2>

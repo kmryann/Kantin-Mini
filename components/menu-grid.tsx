@@ -17,8 +17,8 @@ interface MenuGridProps {
 
 export function MenuGrid({ items }: MenuGridProps) {
   return (
-    // 1 kolom default (mobile), naik jadi 3 kolom mulai sm (>=640px)
-    <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+    // Grid responsif: 1 kolom (mobile), 2 kolom (sm), 3 kolom (md+)
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
       {items.map((item) => (
         <MenuCard key={item.id} item={item} />
       ))}
