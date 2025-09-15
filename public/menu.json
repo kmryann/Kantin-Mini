@@ -7,7 +7,7 @@
       "category": "Paket Nasi",
       "price": 15000,
       "description": "Nasi putih dengan chicken katsu crispy dan saus khas Jepang",
-      "image": "/images/menu/chicken-katsu.png",
+      "image": "/images/menu/katsu-bbq.jpg",
       "recommended": true
     },
     {
@@ -16,7 +16,7 @@
       "category": "Paket Nasi",
       "price": 18000,
       "description": "Nasi dengan ayam crispy digeprek sambal bawang pedas level 1-5",
-      "image": "/placeholder.svg?height=300&width=400"
+      "image": "/images/menu/ayam-geprek.jpg"
     },
     {
       "id": 3,
@@ -24,7 +24,7 @@
       "category": "Paket Nasi",
       "price": 18000,
       "description": "Nasi putih dengan ayam bakar bumbu manis gurih dan lalapan segar",
-      "image": "/placeholder.svg?height=300&width=400"
+      "image": "/images/menu/ayam-kecap.jpg"
     },
     {
       "id": 4,
@@ -32,7 +32,7 @@
       "category": "Paket Nasi",
       "price": 18000,
       "description": "Nasi dengan ayam goreng penyet sambal terasi pedas",
-      "image": "/placeholder.svg?height=300&width=400"
+      "image": "/images/menu/ayam-penyet.jpg"
     },
     {
       "id": 5,
@@ -40,7 +40,7 @@
       "category": "Paket Nasi",
       "price": 18000,
       "description": "Ayam goreng bumbu kalasan khas Yogyakarta dengan nasi putih",
-      "image": "/placeholder.svg?height=300&width=400"
+      "image": "/images/menu/ayam-kalasan.jpg"
     },
     {
       "id": 6,
@@ -48,7 +48,7 @@
       "category": "Paket Nasi",
       "price": 18000,
       "description": "Ayam goreng renyah dengan kremesan gurih dan nasi hangat",
-      "image": "/placeholder.svg?height=300&width=400"
+      "image": "/images/menu/ayam-kremes.jpg"
     },
     {
       "id": 7,
@@ -56,7 +56,7 @@
       "category": "Paket Nasi",
       "price": 16000,
       "description": "Ayam goreng pedas harum daun jeruk dengan nasi putih",
-      "image": "/images/menu/ayampedas-jeruk.jpg"
+      "image": "/images/menu/ayam-daunjeruk.jpg"
     },
     {
       "id": 8,
@@ -72,7 +72,7 @@
       "category": "Paket Nasi",
       "price": 16000,
       "description": "Ayam goreng dengan saus lada hitam pedas gurih",
-      "image": "/placeholder.svg?height=300&width=400"
+      "image": "/images/menu/ayam-ladahitam.jpg"
     },
     {
       "id": 10,
@@ -88,7 +88,7 @@
       "category": "Paket Nasi",
       "price": 18500,
       "description": "Daging sapi empuk saus lada hitam dan nasi putih",
-      "image": "/placeholder.svg?height=300&width=400"
+      "image": "/images/menu/sapi-ladahitam.jpg"
     },
     {
       "id": 12,
@@ -96,7 +96,7 @@
       "category": "Paket Nasi",
       "price": 15000,
       "description": "Sosis goreng saus lada hitam pedas gurih dengan nasi",
-      "image": "/images/menu/sosis-ladahitam.jpg"
+      "image": "/placeholder.svg?height=300&width=400"
     },
     {
       "id": 13,
@@ -161,7 +161,7 @@
       "category": "Light Bites",
       "price": 15000,
       "description": "Mie goreng pedas gurih khas warung tradisional",
-      "image": "/images/menu/mie-tektek.jpg"
+      "image": "/placeholder.svg?height=300&width=400"
     },
     {
       "id": 20.5,

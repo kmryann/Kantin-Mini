@@ -64,7 +64,7 @@ export function About() {
             <div className="relative">
               <div className="aspect-square rounded-2xl overflow-hidden shadow-xl">
                 <img
-                  src="/indonesian-restaurant-interior-warm-lighting.jpg"
+                  src="/placeholder.svg?height=300&width=400"
                   alt="Interior Kantin Mini yang menampilkan suasana hangat dengan pencahayaan lembut, meja kayu, dan dekorasi tradisional Indonesia yang menciptakan atmosfer nyaman untuk bersantap"
                   className="w-full h-full object-cover"
                   loading="lazy"
