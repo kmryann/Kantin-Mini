@@ -6,8 +6,8 @@
       "name": "Chicken Katsu",
       "category": "Paket Nasi",
       "price": 15000,
-      "description": "Nasi putih dengan chicken katsu crispy dan saus khas Jepang",
-      "image": "/images/menu/katsu-bbq.jpg",
+      "description": "Nasi putih dengan chicken katsu renyah dan saus Jepang",
+      "image": "/images/menu/katsu-bbq.webp",
       "recommended": true
     },
     {
@@ -15,71 +15,71 @@
       "name": "Ayam Geprek",
       "category": "Paket Nasi",
       "price": 18000,
-      "description": "Nasi dengan ayam crispy digeprek sambal bawang pedas level 1-5",
-      "image": "/images/menu/ayam-geprek.jpg"
+      "description": "Ayam crispy digeprek sambal bawang level 1 sampai 5",
+      "image": "/images/menu/ayam-geprek.webp"
     },
     {
       "id": 3,
       "name": "Ayam Bakar",
       "category": "Paket Nasi",
       "price": 18000,
-      "description": "Nasi putih dengan ayam bakar bumbu manis gurih dan lalapan segar",
-      "image": "/images/menu/ayam-kecap.jpg"
+      "description": "Ayam bakar bumbu manis gurih dengan lalapan segar",
+      "image": "/images/menu/ayam-kecap.webp"
     },
     {
       "id": 4,
       "name": "Ayam Penyet",
       "category": "Paket Nasi",
       "price": 18000,
-      "description": "Nasi dengan ayam goreng penyet sambal terasi pedas",
-      "image": "/images/menu/ayam-penyet.jpg"
+      "description": "Ayam goreng penyet dengan sambal terasi pedas",
+      "image": "/images/menu/ayam-penyet.webp"
     },
     {
       "id": 5,
       "name": "Ayam Kalasan",
       "category": "Paket Nasi",
       "price": 18000,
-      "description": "Ayam goreng bumbu kalasan khas Yogyakarta dengan nasi putih",
-      "image": "/images/menu/ayam-kalasan.jpg"
+      "description": "Ayam goreng bumbu kalasan khas Yogyakarta",
+      "image": "/images/menu/ayam-kalasan.webp"
     },
     {
       "id": 6,
       "name": "Ayam Kremes",
       "category": "Paket Nasi",
       "price": 18000,
-      "description": "Ayam goreng renyah dengan kremesan gurih dan nasi hangat",
-      "image": "/images/menu/ayam-kremes.jpg"
+      "description": "Ayam goreng renyah dengan kremesan gurih",
+      "image": "/images/menu/ayam-kremes.webp"
     },
     {
       "id": 7,
       "name": "Ayam Pedas Daun Jeruk",
       "category": "Paket Nasi",
       "price": 16000,
-      "description": "Ayam goreng pedas harum daun jeruk dengan nasi putih",
-      "image": "/images/menu/ayam-daunjeruk.jpg"
+      "description": "Ayam pedas wangi daun jeruk",
+      "image": "/images/menu/ayam-daunjeruk.webp"
     },
     {
       "id": 8,
       "name": "Ayam Teriyaki",
       "category": "Paket Nasi",
       "price": 16000,
-      "description": "Ayam goreng saus teriyaki manis gurih ala Jepang",
-      "image": "/images/menu/ayam-teriyaki.jpg"
+      "description": "Ayam saus teriyaki manis gurih",
+      "image": "/images/menu/ayam-teriyaki.webp"
     },
     {
       "id": 9,
       "name": "Ayam Lada Hitam",
       "category": "Paket Nasi",
       "price": 16000,
-      "description": "Ayam goreng dengan saus lada hitam pedas gurih",
-      "image": "/images/menu/ayam-ladahitam.jpg"
+      "description": "Ayam saus lada hitam pedas gurih",
+      "image": "/images/menu/ayam-ladahitam.webp"
     },
     {
       "id": 10,
       "name": "Chicken Wing",
       "category": "Paket Nasi",
       "price": 20000,
-      "description": "Nasi putih dengan chicken wing bumbu pedas manis",
+      "description": "Chicken wing bumbu pedas manis dengan nasi putih",
       "image": "/placeholder.svg?height=300&width=400"
     },
     {
@@ -87,15 +87,15 @@
       "name": "Sapi Lada Hitam",
       "category": "Paket Nasi",
       "price": 18500,
-      "description": "Daging sapi empuk saus lada hitam dan nasi putih",
-      "image": "/images/menu/sapi-ladahitam.jpg"
+      "description": "Daging sapi empuk saus lada hitam",
+      "image": "/images/menu/sapi-ladahitam.webp"
     },
     {
       "id": 12,
       "name": "Sosis Lada Hitam",
       "category": "Paket Nasi",
       "price": 15000,
-      "description": "Sosis goreng saus lada hitam pedas gurih dengan nasi",
+      "description": "Sosis goreng saus lada hitam pedas gurih",
       "image": "/placeholder.svg?height=300&width=400"
     },
     {
@@ -103,109 +103,109 @@
       "name": "Sosis Asam Manis",
       "category": "Paket Nasi",
       "price": 15000,
-      "description": "Sosis saus asam manis segar dengan nasi hangat",
-      "image": "/images/menu/sosis-asammanis.jpg"
+      "description": "Sosis saus asam manis segar",
+      "image": "/images/menu/sosis-asammanis.webp"
     },
     {
       "id": 14,
       "name": "Nasi Goreng",
       "category": "Paket Nasi",
       "price": 17000,
-      "description": "Nasi goreng spesial dengan telur dan sayuran segar",
-      "image": "/images/menu/nasi-goreng.jpg"
-    },
-    {
-      "id": 14.5,
-      "name": "Nasi Goreng Putih",
-      "category": "Paket Nasi",
-      "price": 17000,
-      "description": "Nasi goreng spesial dengan telur dan sayuran segar",
-      "image": "/images/menu/nasi-goreng-putih.jpg"
+      "description": "Nasi goreng spesial dengan telur dan sayur segar",
+      "image": "/images/menu/nasi-goreng.webp"
     },
     {
       "id": 15,
-      "name": "Omelet Mie",
+      "name": "Nasi Goreng Putih",
       "category": "Paket Nasi",
-      "price": 12000,
-      "description": "Omelet mie goreng dengan bumbu spesial",
-      "image": "/placeholder.svg?height=300&width=400"
+      "price": 17000,
+      "description": "Nasi goreng putih gurih dengan telur dan sayur",
+      "image": "/images/menu/nasi-goreng-putih.webp"
     },
     {
       "id": 16,
+      "name": "Omelet Mie",
+      "category": "Paket Nasi",
+      "price": 12000,
+      "description": "Omelet mie goreng bumbu spesial",
+      "image": "/placeholder.svg?height=300&width=400"
+    },
+    {
+      "id": 17,
       "name": "Soto Ayam",
       "category": "Paket Nasi",
       "price": 15000,
-      "description": "Soto ayam hangat dengan kuah gurih rempah",
+      "description": "Soto ayam kuah rempah gurih",
       "image": "/placeholder.svg?height=300&width=400"
     },
 
     {
-      "id": 17,
+      "id": 18,
       "name": "Kentang Katsu",
       "category": "Light Bites",
       "price": 17000,
       "description": "Kentang goreng crispy dengan saus katsu manis",
-      "image": "/images/menu/kentang-katsu.jpg"
-    },
-    {
-      "id": 18,
-      "name": "Kentang Sosis",
-      "category": "Light Bites",
-      "price": 17500,
-      "description": "Kentang goreng renyah dengan potongan sosis gurih",
-      "image": "/images/menu/kentang-sosis.jpg"
+      "image": "/images/menu/kentang-katsu.webp"
     },
     {
       "id": 19,
+      "name": "Kentang Sosis",
+      "category": "Light Bites",
+      "price": 17500,
+      "description": "Kentang renyah dengan potongan sosis gurih",
+      "image": "/images/menu/kentang-sosis.webp"
+    },
+    {
+      "id": 20,
       "name": "Spaghetti Carbonara",
       "category": "Light Bites",
       "price": 15000,
       "description": "Spaghetti creamy saus carbonara gurih",
-      "image": "/images/menu/carbonara.jpg"
-    },
-    {
-      "id": 20,
-      "name": "Mie Tektek",
-      "category": "Light Bites",
-      "price": 15000,
-      "description": "Mie goreng pedas gurih khas warung tradisional",
-      "image": "/images/menu/mie-tektek.jpg"
-    },
-    {
-      "id": 20.5,
-      "name": "Kwetiau Goreng",
-      "category": "Light Bites",
-      "price": 15000,
-      "description": "Kwetiau khas warung tradisional",
-      "image": "/images/menu/kwetiau-goreng.jpg"
-    },
-    {
-      "id": 20.7,
-      "name": "Kwetiau Kuah",
-      "category": "Light Bites",
-      "price": 15000,
-      "description": "Kwetiau khas warung tradisional",
-      "image": "/images/menu/kwetiau-kuah.jpg"
+      "image": "/images/menu/carbonara.webp"
     },
     {
       "id": 21,
-      "name": "Mie Goreng",
+      "name": "Mie Tektek",
       "category": "Light Bites",
-      "price": 6500,
-      "description": "Mie goreng spesial dengan telur dan sayuran",
-      "image": "/placeholder.svg?height=300&width=400"
+      "price": 15000,
+      "description": "Mie goreng pedas gurih gaya kaki lima",
+      "image": "/images/menu/mie-tektek.webp"
     },
     {
       "id": 22,
+      "name": "Kwetiau Goreng",
+      "category": "Light Bites",
+      "price": 15000,
+      "description": "Kwetiau goreng wajan panas rasa smoky",
+      "image": "/images/menu/kwetiau-goreng.webp"
+    },
+    {
+      "id": 23,
+      "name": "Kwetiau Kuah",
+      "category": "Light Bites",
+      "price": 15000,
+      "description": "Kwetiau kuah gurih hangat",
+      "image": "/images/menu/kwetiau-kuah.webp"
+    },
+    {
+      "id": 24,
+      "name": "Mie Goreng",
+      "category": "Light Bites",
+      "price": 6500,
+      "description": "Mie goreng spesial dengan telur dan sayur",
+      "image": "/placeholder.svg?height=300&width=400"
+    },
+    {
+      "id": 25,
       "name": "Mie Rebus",
       "category": "Light Bites",
       "price": 6500,
-      "description": "Mie rebus kuah gurih pedas dengan telur",
+      "description": "Mie rebus kuah gurih pedas",
       "image": "/placeholder.svg?height=300&width=400"
     },
 
     {
-      "id": 23,
+      "id": 26,
       "name": "Ayam Besar",
       "category": "Kapten Chicken",
       "price": 8500,
@@ -213,23 +213,23 @@
       "image": "/placeholder.svg?height=300&width=400"
     },
     {
-      "id": 24,
+      "id": 27,
       "name": "Ayam Kecil",
       "category": "Kapten Chicken",
       "price": 7500,
-      "description": "Potongan ayam goreng kecil renyah gurih",
+      "description": "Potongan ayam goreng kecil renyah",
       "image": "/placeholder.svg?height=300&width=400"
     },
     {
-      "id": 25,
+      "id": 28,
       "name": "Kulit Ayam",
       "category": "Kapten Chicken",
       "price": 5000,
-      "description": "Kulit ayam goreng crispy garing gurih",
+      "description": "Kulit ayam goreng garing gurih",
       "image": "/placeholder.svg?height=300&width=400"
     },
     {
-      "id": 26,
+      "id": 29,
       "name": "Sambal Dower",
       "category": "Kapten Chicken",
       "price": 3000,
@@ -238,96 +238,96 @@
     },
 
     {
-      "id": 27,
+      "id": 30,
       "name": "Kapal Selam Besar",
       "category": "Pempek",
       "price": 15000,
-      "description": "Pempek ikan tenggiri besar isi telur dengan kuah cuko",
-      "image": "/images/menu/selam-besar.jpg"
-    },
-    {
-      "id": 28,
-      "name": "Lenjer Besar",
-      "category": "Pempek",
-      "price": 15000,
-      "description": "Pempek ikan tenggiri panjang besar kenyal gurih",
-      "image": "/images/menu/lenjer-besar.jpg"
-    },
-    {
-      "id": 29,
-      "name": "Pempek Kecil",
-      "category": "Pempek",
-      "price": 12000,
-      "description": "Pempek kecil ikan tenggiri kuah cuko pedas",
-      "image": "/images/menu/pempek-kecil.jpg"
-    },
-    {
-      "id": 30,
-      "name": "Model",
-      "category": "Pempek",
-      "price": 15000,
-      "description": "Pempek model isi tahu kuah cuko segar",
-      "image": "/images/menu/model.jpg"
+      "description": "Pempek tenggiri besar isi telur dengan cuko segar",
+      "image": "/images/menu/selam-besar.webp"
     },
     {
       "id": 31,
-      "name": "Tekwan",
+      "name": "Lenjer Besar",
       "category": "Pempek",
       "price": 15000,
-      "description": "Sup tekwan ikan tenggiri kuah gurih segar",
-      "image": "/images/menu/tekwan.jpg"
+      "description": "Pempek tenggiri panjang besar kenyal gurih",
+      "image": "/images/menu/lenjer-besar.webp"
     },
     {
       "id": 32,
-      "name": "Lenggang",
+      "name": "Pempek Kecil",
       "category": "Pempek",
-      "price": 15000,
-      "description": "Pempek panggang telur dadar khas Palembang",
-      "image": "/images/menu/lenggang.jpg"
+      "price": 12000,
+      "description": "Pempek kecil tenggiri dengan cuko pedas segar",
+      "image": "/images/menu/pempek-kecil.webp"
     },
     {
       "id": 33,
-      "name": "Rujak Mie",
+      "name": "Model",
       "category": "Pempek",
       "price": 15000,
-      "description": "Pempek dengan mie kuning khas Palembang",
-      "image": "/images/menu/rujak-mie.jpg"
+      "description": "Pempek isi tahu dengan kuah kaldu cuko",
+      "image": "/images/menu/model.webp"
     },
     {
       "id": 34,
+      "name": "Tekwan",
+      "category": "Pempek",
+      "price": 15000,
+      "description": "Sup tekwan tenggiri kuah bening gurih",
+      "image": "/images/menu/tekwan.webp"
+    },
+    {
+      "id": 35,
+      "name": "Lenggang",
+      "category": "Pempek",
+      "price": 15000,
+      "description": "Pempek panggang dengan telur dadar khas Palembang",
+      "image": "/images/menu/lenggang.webp"
+    },
+    {
+      "id": 36,
+      "name": "Rujak Mie",
+      "category": "Pempek",
+      "price": 15000,
+      "description": "Pempek dengan mie kuning dan cuko khas Palembang",
+      "image": "/images/menu/rujak-mie.webp"
+    },
+    {
+      "id": 37,
       "name": "Otak-otak",
       "category": "Pempek",
       "price": 15000,
-      "description": "Otak-otak khas Palembang",
-      "image": "/images/menu/otak-otak.jpg"
+      "description": "Otak otak panggang dengan cuko pedas",
+      "image": "/images/menu/otak-otak.webp"
     },
 
     {
-      "id": 43,
+      "id": 38,
       "name": "Nutrisari",
       "category": "Minuman",
       "price": 3500,
-      "description": "Minuman jeruk Nutrisari segar dingin",
+      "description": "Minuman jeruk segar dingin",
       "image": "/placeholder.svg?height=300&width=400"
     },
     {
-      "id": 44,
+      "id": 39,
       "name": "Kopi",
       "category": "Minuman",
       "price": 3500,
-      "description": "Kopi hitam panas klasik Indonesia",
+      "description": "Kopi hitam panas klasik",
       "image": "/placeholder.svg?height=300&width=400"
     },
     {
-      "id": 45,
+      "id": 40,
       "name": "Teh Tarik",
       "category": "Minuman",
       "price": 4000,
-      "description": "Teh tarik manis gurih khas Malaysia",
+      "description": "Teh tarik manis gurih",
       "image": "/placeholder.svg?height=300&width=400"
     },
     {
-      "id": 46,
+      "id": 41,
       "name": "Lemon Tea",
       "category": "Minuman",
       "price": 3500,
