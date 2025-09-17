@@ -104,7 +104,7 @@
       "category": "Paket Nasi",
       "price": 15000,
       "description": "Sosis saus asam manis segar dengan nasi hangat",
-      "image": "/placeholder.svg?height=300&width=400"
+      "image": "/images/menu/sosis-asammanis.jpg"
     },
     {
       "id": 14,
@@ -112,7 +112,15 @@
       "category": "Paket Nasi",
       "price": 17000,
       "description": "Nasi goreng spesial dengan telur dan sayuran segar",
-      "image": "/placeholder.svg?height=300&width=400"
+      "image": "/images/menu/nasi-goreng.jpg"
+    },
+    {
+      "id": 14.5,
+      "name": "Nasi Goreng Putih",
+      "category": "Paket Nasi",
+      "price": 17000,
+      "description": "Nasi goreng spesial dengan telur dan sayuran segar",
+      "image": "/images/menu/nasi-goreng-putih.jpg"
     },
     {
       "id": 15,
@@ -137,7 +145,7 @@
       "category": "Light Bites",
       "price": 17000,
       "description": "Kentang goreng crispy dengan saus katsu manis",
-      "image": "/images/menu/kentang-katsu.png"
+      "image": "/images/menu/kentang-katsu.jpg"
     },
     {
       "id": 18,
@@ -145,7 +153,7 @@
       "category": "Light Bites",
       "price": 17500,
       "description": "Kentang goreng renyah dengan potongan sosis gurih",
-      "image": "/images/menu/kentang-sosis.png"
+      "image": "/images/menu/kentang-sosis.jpg"
     },
     {
       "id": 19,
@@ -153,7 +161,7 @@
       "category": "Light Bites",
       "price": 15000,
       "description": "Spaghetti creamy saus carbonara gurih",
-      "image": "/images/menu/carbonara.png"
+      "image": "/images/menu/carbonara.jpg"
     },
     {
       "id": 20,
@@ -161,15 +169,23 @@
       "category": "Light Bites",
       "price": 15000,
       "description": "Mie goreng pedas gurih khas warung tradisional",
-      "image": "/placeholder.svg?height=300&width=400"
+      "image": "/images/menu/mie-tetek.jpg"
     },
     {
       "id": 20.5,
-      "name": "Kwetiau",
+      "name": "Kwetiau Goreng",
       "category": "Light Bites",
       "price": 15000,
       "description": "Kwetiau khas warung tradisional",
-      "image": "/placeholder.svg?height=300&width=400"
+      "image": "/images/menu/kwetiau-goreng.jpg"
+    },
+    {
+      "id": 20.7,
+      "name": "Kwetiau Kuah",
+      "category": "Light Bites",
+      "price": 15000,
+      "description": "Kwetiau khas warung tradisional",
+      "image": "/images/menu/kwetiau-kuah.jpg"
     },
     {
       "id": 21,
@@ -251,7 +267,7 @@
       "category": "Pempek",
       "price": 15000,
       "description": "Pempek model isi tahu kuah cuko segar",
-      "image": "/placeholder.svg?height=300&width=400"
+      "image": "/images/menu/model.jpg"
     },
     {
       "id": 31,
@@ -259,7 +275,7 @@
       "category": "Pempek",
       "price": 15000,
       "description": "Sup tekwan ikan tenggiri kuah gurih segar",
-      "image": "/placeholder.svg?height=300&width=400"
+      "image": "/images/menu/tekwan.jpg"
     },
     {
       "id": 32,
