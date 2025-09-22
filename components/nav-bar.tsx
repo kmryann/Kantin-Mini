@@ -1,27 +1,27 @@
-"use client"
+'use client';
 
-import { useState } from "react"
-import { Button } from "@/components/ui/button"
-import { ThemeToggle } from "@/components/theme-toggle"
-import { Menu, X } from "lucide-react"
+import { useState } from 'react';
+import { Button } from '@/components/ui/button';
+import { ThemeToggle } from '@/components/theme-toggle';
+import { Menu, X } from 'lucide-react';
 
 export function NavBar() {
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(false);
 
   const scrollToMenu = () => {
-    document.getElementById("menu")?.scrollIntoView({ behavior: "smooth" })
-    setIsOpen(false)
-  }
+    document.getElementById('menu')?.scrollIntoView({ behavior: 'smooth' });
+    setIsOpen(false);
+  };
 
   const scrollToAbout = () => {
-    document.getElementById("about")?.scrollIntoView({ behavior: "smooth" })
-    setIsOpen(false)
-  }
+    document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
+    setIsOpen(false);
+  };
 
   const scrollToContact = () => {
-    document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })
-    setIsOpen(false)
-  }
+    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+    setIsOpen(false);
+  };
 
   return (
     <nav
@@ -32,16 +32,24 @@ export function NavBar() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex-shrink-0">
-            <a href="#" aria-label="Kantin Mini - Beranda" className="inline-flex items-center gap-2">
+            <a
+              href="#"
+              aria-label="Kantin Mini - Beranda"
+              className="inline-flex items-center gap-2"
+            >
               {/* Logo placeholder */}
-              <img src="/logo.svg" alt="Logo Kantin Mini" className="h-6 w-6" />
+              <img src="/logo-kantinmini.png" alt="Logo Kantin Mini" className="h-6 w-auto" />
               <span className="text-xl font-bold text-foreground tracking-tight">Kantin Mini</span>
             </a>
           </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-4">
-            <Button variant="ghost" onClick={scrollToMenu} aria-label="Lihat menu makanan dan minuman">
+            <Button
+              variant="ghost"
+              onClick={scrollToMenu}
+              aria-label="Lihat menu makanan dan minuman"
+            >
               Menu
             </Button>
             <Button variant="ghost" onClick={scrollToAbout} aria-label="Tentang Kantin Mini">
@@ -60,11 +68,15 @@ export function NavBar() {
               variant="ghost"
               size="sm"
               onClick={() => setIsOpen(!isOpen)}
-              aria-label={isOpen ? "Tutup menu navigasi" : "Buka menu navigasi"}
+              aria-label={isOpen ? 'Tutup menu navigasi' : 'Buka menu navigasi'}
               aria-expanded={isOpen}
               aria-controls="mobile-menu"
             >
-              {isOpen ? <X className="h-5 w-5" aria-hidden="true" /> : <Menu className="h-5 w-5" aria-hidden="true" />}
+              {isOpen ? (
+                <X className="h-5 w-5" aria-hidden="true" />
+              ) : (
+                <Menu className="h-5 w-5" aria-hidden="true" />
+              )}
             </Button>
           </div>
         </div>
@@ -105,5 +117,5 @@ export function NavBar() {
         )}
       </div>
     </nav>
-  )
+  );
 }
