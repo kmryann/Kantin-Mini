@@ -1,6 +1,6 @@
-"use client";
+'use client';
 
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 
 type Resp = { value?: number };
 
@@ -13,12 +13,12 @@ export default function VisitorAdminPage() {
     setLoading(true);
     setErr(null);
     try {
-      const r = await fetch("/api/visitors", { method: "GET", cache: "no-store" });
+      const r = await fetch('/api/visitors', { method: 'GET', cache: 'no-store' });
       if (!r.ok) throw new Error(`HTTP ${r.status}`);
       const d: Resp = await r.json();
-      setCount(typeof d.value === "number" ? d.value : 0);
+      setCount(typeof d.value === 'number' ? d.value : 0);
     } catch (e: any) {
-      setErr(e?.message ?? "Gagal memuat");
+      setErr(e?.message ?? 'Gagal memuat');
       setCount(null);
     } finally {
       setLoading(false);
@@ -37,7 +37,7 @@ export default function VisitorAdminPage() {
       <div className="mt-6 rounded-2xl border p-5">
         <div className="text-sm text-gray-500">Total Pengunjung</div>
         <div className="text-4xl font-bold mt-2">
-          {count === null ? (loading ? "…" : "—") : count}
+          {count === null ? (loading ? '…' : '—') : count}
         </div>
 
         {err && <p className="mt-3 text-sm text-red-600">Error: {err}</p>}
@@ -48,18 +48,24 @@ export default function VisitorAdminPage() {
           disabled={loading}
           className="mt-4 rounded-xl border px-3 py-2 text-sm"
         >
-          {loading ? "Menyegarkan…" : "Refresh"}
+          {loading ? 'Menyegarkan…' : 'Refresh'}
         </button>
 
         {/* Tombol Paksa Hit */}
         <button
           onClick={async () => {
-            await fetch("/api/visitors?force=1", { method: "POST", cache: "no-store" });
-            await fetchCount();
+            setLoading(true);
+            try {
+              await fetch('/api/visitors?force=1', { method: 'POST', cache: 'no-store' });
+              await fetchCount();
+            } finally {
+              setLoading(false);
+            }
           }}
-          className="mt-2 rounded-xl border px-3 py-2 text-sm"
+          disabled={loading}
+          className="mt-2 rounded-xl border px-3 py-2 text-sm disabled:opacity-50"
         >
-          Paksa Hit
+          {loading ? 'Memproses…' : 'Paksa Hit'}
         </button>
       </div>
 
