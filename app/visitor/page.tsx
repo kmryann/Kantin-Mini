@@ -9,7 +9,7 @@ export default function VisitorAdminPage() {
   const [loading, setLoading] = useState(false);
   const [err, setErr] = useState<string | null>(null);
 
-  async function load() {
+  async function fetchCount() {
     setLoading(true);
     setErr(null);
     try {
@@ -25,7 +25,9 @@ export default function VisitorAdminPage() {
     }
   }
 
-  useEffect(() => { load(); }, []);
+  useEffect(() => {
+    fetchCount();
+  }, []);
 
   return (
     <main className="p-6 max-w-xl mx-auto">
@@ -40,12 +42,24 @@ export default function VisitorAdminPage() {
 
         {err && <p className="mt-3 text-sm text-red-600">Error: {err}</p>}
 
+        {/* Tombol Refresh */}
         <button
-          onClick={load}
+          onClick={fetchCount}
           disabled={loading}
           className="mt-4 rounded-xl border px-3 py-2 text-sm"
         >
           {loading ? "Menyegarkan…" : "Refresh"}
+        </button>
+
+        {/* Tombol Paksa Hit */}
+        <button
+          onClick={async () => {
+            await fetch("/api/visitors?force=1", { method: "POST", cache: "no-store" });
+            await fetchCount();
+          }}
+          className="mt-2 rounded-xl border px-3 py-2 text-sm"
+        >
+          Paksa Hit
         </button>
       </div>
 
