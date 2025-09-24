@@ -3,12 +3,12 @@ setlocal enabledelayedexpansion
 mkdir output
 
 REM === Loop untuk JPG ===
-for %%f in (public\images\menu\*.jpg) do (
+for %%f in (public\images\*.jpg) do (
     magick "%%f" -resize 1200x1200 -quality 90 "output\%%~nf.webp"
 )
 
 REM === Loop untuk PNG ===
-for %%f in (public\images\menu\*.png) do (
+for %%f in (public\images\*.png) do (
     magick "%%f" -resize 1200x1200 -quality 90 "output\%%~nf.webp"
 )
 

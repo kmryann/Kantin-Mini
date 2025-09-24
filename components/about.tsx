@@ -1,5 +1,6 @@
 'use client';
 
+import ImageCarousel from '@/components/ImageCarousel';
 import { Card, CardContent } from '@/components/ui/card';
 import { Heart, Clock, DollarSign, Zap } from 'lucide-react';
 
@@ -25,6 +26,22 @@ export function About() {
       icon: Clock,
       title: 'Buka Senin-Jumat',
       description: 'Siap melayani Anda dari pagi hingga malam, setiap hari kerja',
+    },
+  ];
+
+  // Gambar untuk carousel (ganti src sesuai aset kamu)
+  const slides = [
+    {
+      src: '/about-kantinmini.png',
+      alt: 'Suasana hangat di Kantin Mini dengan pencahayaan lembut dan dekorasi tradisional',
+    },
+    {
+      src: '/about-kantinmini-2.jpg',
+      alt: 'Menu andalan tersaji rapi di etalase Kantin Mini',
+    },
+    {
+      src: '/about-kantinmini-3.jpg',
+      alt: 'Area kasir dan pelayanan cepat di Kantin Mini',
     },
   ];
 
@@ -65,31 +82,26 @@ export function About() {
               </div>
             </article>
 
+            {/* Carousel Gambar */}
             <div className="relative">
-              <div className="aspect-square rounded-2xl overflow-hidden shadow-xl">
-                <img
-                  src="/about-kantinmini.png"
-                  alt="Interior Kantin Mini yang menampilkan suasana hangat dengan pencahayaan lembut, meja kayu, dan dekorasi tradisional Indonesia yang menciptakan atmosfer nyaman untuk bersantap"
-                  className="w-full h-full object-cover"
-                  loading="lazy"
-                />
-                {/* Teks overlay */}
-                <span
-                  className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-black/60 text-white px-4 py-2 rounded-lg text-sm font-semibold"
-                  style={{ pointerEvents: 'none' }}
-                >
-                  Nanti ini ganti foto
-                </span>
-              </div>
-              {/* Decorative elements - hidden from screen readers */}
+              <ImageCarousel
+                slides={slides}
+                intervalMs={4000}        // atur interval rotasi
+                aspect="aspect-square"   // bisa 'aspect-video' untuk landscape
+                rounded="rounded-2xl"
+                shadow="shadow-xl"
+                className=""
+              />
+
+              {/* Elemen dekoratif */}
               <div
                 className="absolute -top-4 -right-4 w-24 h-24 bg-primary/10 rounded-full blur-xl"
                 aria-hidden="true"
-              ></div>
+              />
               <div
                 className="absolute -bottom-4 -left-4 w-32 h-32 bg-accent/10 rounded-full blur-xl"
                 aria-hidden="true"
-              ></div>
+              />
             </div>
           </div>
 

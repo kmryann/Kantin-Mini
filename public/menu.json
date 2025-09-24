@@ -208,7 +208,7 @@
       "category": "Light Bites",
       "price": 6500,
       "description": "Mie goreng/kuah spesial",
-      "image": "/placeholder.svg?height=300&width=400"
+      "image": "/images/menu/mie-gorengrebus.webp"
     },
     {
       "id": 29,
@@ -232,7 +232,7 @@
       "category": "Kapten Chicken",
       "price": 5000,
       "description": "Kulit ayam goreng garing gurih",
-      "image": "/placeholder.svg?height=300&width=400"
+      "image": "/images/menu/kulit.webp"
     },
     {
       "id": 32,
@@ -284,35 +284,35 @@
     },
     {
       "id": 40,
-      "name": "Nutrisari",
-      "category": "Minuman",
-      "price": 3500,
-      "description": "Aneka rasa Nutrisari segar dingin",
-      "image": "/placeholder.svg?height=300&width=400"
-    },
-    {
-      "id": 41,
-      "name": "Kopi",
-      "category": "Minuman",
-      "price": 4000,
-      "description": "Kopi hitam manis panas atau dingin",
-      "image": "/placeholder.svg?height=300&width=400"
-    },
-    {
-      "id": 42,
       "name": "Teh Tarik",
       "category": "Minuman",
       "price": 4000,
       "description": "Teh tarik manis panas atau dingin",
-      "image": "/placeholder.svg?height=300&width=400"
+      "image": "/images/menu/teh-tarik.webp"
     },
     {
-      "id": 43,
+      "id": 41,
       "name": "Lemon Tea",
       "category": "Minuman",
       "price": 4000,
       "description": "Teh manis lemon segar dingin",
-      "image": "/placeholder.svg?height=300&width=400"
+      "image": "/images/menu/lemon-tea.webp"
+    },
+    {
+      "id": 42,
+      "name": "Nutrisari",
+      "category": "Minuman",
+      "price": 3500,
+      "description": "Aneka rasa Nutrisari segar dingin",
+      "image": "/images/menu/nutrisari.webp"
+    },
+    {
+      "id": 43,
+      "name": "Kopi",
+      "category": "Minuman",
+      "price": 4000,
+      "description": "Kopi hitam manis panas atau dingin",
+      "image": "/images/menu/kopi.webp"
     }
   ]
 }

@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { ChefHat, Clock, Navigation, MessageCircle, Tag } from 'lucide-react';
+import { ChefHat, Clock, Navigation, MessageCircle, Tag, Calendar } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 // --- KONFIG ---
@@ -29,16 +29,22 @@ export default function Hero() {
 
       <div className="mx-auto max-w-5xl px-5 sm:px-6 md:px-8 py-16 sm:py-20 md:py-24 animate-fade-in animate-delay-100">
         {/* Badge */}
-        <div className="flex justify-center">
+        <div className="flex flex-wrap items-center justify-center gap-2">
           <span
-            className="
-      inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium shadow
-      bg-emerald-600 text-white
-      dark:bg-emerald-500 dark:text-emerald-100
-    "
+            className="inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium shadow
+                   bg-emerald-600 text-white dark:bg-emerald-500 dark:text-emerald-100"
           >
             <Tag className="h-4 w-4" />
             Harga Terjangkau untuk Semua
+          </span>
+
+          <span
+            className="inline-flex items-center gap-2 rounded-full px-3 py-1.5 text-sm font-medium shadow
+                   bg-white/15 text-white backdrop-blur
+                   ring-1 ring-white/20 dark:bg-white/10"
+          >
+            <Calendar className="h-4 w-4 text-emerald-300" />
+            <time dateTime="2024">Berdiri sejak 1986</time>
           </span>
         </div>
 
