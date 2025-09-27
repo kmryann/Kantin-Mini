@@ -66,10 +66,7 @@ export default function Hero() {
             <Clock className="h-4 w-4 text-emerald-300" />
             <span>Buka 09:00 - 20:00</span>
           </div>
-          <div className="inline-flex items-center justify-center gap-2 rounded-lg bg-white/10 px-4 py-2 text-white/90 backdrop-blur">
-            <Navigation className="h-4 w-4 text-emerald-300" />
-            <span>Delivery Available</span>
-          </div>
+          
         </div>
 
         {/* CTA buttons */}
