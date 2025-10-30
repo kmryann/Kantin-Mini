@@ -35,7 +35,7 @@ export default function Hero() {
                    bg-emerald-600 text-white dark:bg-emerald-500 dark:text-emerald-100"
           >
             <Tag className="h-4 w-4" />
-            Harga Terjangkau untuk Semua
+            Harga Terjangkau
           </span>
 
           <span
